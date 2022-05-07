@@ -1,0 +1,10 @@
+{ Aplicación realizada con las siguientes tecnologías : Angular, Node, express,  MongoDb, npm  }
+{ La carpeta "CsvApp" se ejecuta en el socket 4200 con el comando "ng serve"                   }
+{ La carpeta "BackendCvsApp se ejecuta en el socket 3456 con el comando "npm run iniciar"      }
+{ El proyecto cuenta con dos componentes, el primero se encarga de la lógica para el documento }
+{ .cvs y el segundo se encarga de traer los datos guardados en la base de datos de mongoDb     }
+
+{ Las principales librerias que son necesarias instalar son :                                  }
+{ Para el BackEnd : express, bodyparser , cors, mongoose                                       }
+{ En el FrontEnd bastará con el @angular/cli                                                   }
+{ Todo esto con el gestor de paquetes de npm                                                   }
