@@ -1,0 +1,19 @@
+<div class="background-input">
+  <input type="file" #fileImportInput name="CSV File Upload" (change)="fileChangeListener($event)" accept=".csv">
+</div>
+<div class="table-data">
+  <table>
+      <thead>
+          <tr>
+              <th *ngFor="let header of arrayHeader">{{header}}</th>
+          </tr>
+      </thead>
+      <tbody>
+        <td *ngFor="let body of arrayHeader; let i = index" >
+            <tr *ngFor="let body of arrayBody">
+              {{body[i]}}
+            </tr>
+        </td>    
+    </tbody>
+  </table>
+</div>

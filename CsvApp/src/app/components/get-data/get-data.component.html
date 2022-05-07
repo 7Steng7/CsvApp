@@ -1,0 +1,8 @@
+<div class="space" *ngFor="let rec of received">
+    <p>Campos capturados : {{rec.fields}}</p>
+    <p>Datos de esos campos : </p>
+
+    <span style="width:80%; word-wrap:break-word; display:inline-block;">         
+        {{rec.registerData}}
+    </span>
+</div>
