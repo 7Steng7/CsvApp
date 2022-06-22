@@ -4,3 +4,17 @@
     white-space: initial;
     margin: auto;
 }
+.table-data{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+th{
+    text-align: -webkit-center;
+    background-color: rgb(0, 194, 194);
+    margin-top: 10px;
+}
+tr, td{
+    text-align: -webkit-center;
+    background-color: rgb(0, 219, 146);
+}

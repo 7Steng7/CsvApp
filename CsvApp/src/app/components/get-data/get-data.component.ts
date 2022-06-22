@@ -9,7 +9,9 @@ import { Data } from '../../interfaces/data';
 export class GetDataComponent implements OnInit {
 
   received! : Data[];
-
+  arrayField! : String[];
+  arrayData! : String[];
+  bodyTimes! : number;
   constructor(private insertService : InsertDataService) { }
 
   ngOnInit(): void {
@@ -17,6 +19,9 @@ export class GetDataComponent implements OnInit {
   }
   getRecord(): void {
     this.insertService.getRecord()
-    .subscribe((received) => { this.received = received });
+    .subscribe((received) => {
+      this.received = received;
+      this.ngOnInit();
+    });
   }
 }

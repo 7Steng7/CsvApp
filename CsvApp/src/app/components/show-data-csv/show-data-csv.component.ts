@@ -20,12 +20,12 @@ export class ShowDataCsvComponent implements OnInit {
   isCSV_Valid : any;
   arrayHeader = [];
   arrayBody = [];
+  lista = [];
 
     constructor(private papa: Papa, private insertService : InsertDataService) {
     }
 
     fileChangeListener($event: any): void {
-
       const files = $event.srcElement.files;
 
       if (files !== null && files !== undefined && files.length > 0) {
@@ -40,6 +40,11 @@ export class ShowDataCsvComponent implements OnInit {
           const results = this.papa.parse(csv as string, { header: false });
           //Header and body in the sheet - consumed data
           this.arrayHeader = results.data[0];
+
+          for(let j = 1 ; j < results.data.length ; j++){
+            this.lista = results.data[j];
+          }
+          
           this.arrayBody = results.data.slice(1, results.data.length);
 
           var newDataSend = this.dataNew();
@@ -67,10 +72,10 @@ export class ShowDataCsvComponent implements OnInit {
     }
     refreshRecord() {
       this.insertService.getRecord()
-        .subscribe(data => {
-          this.dataSend = data;
+        .subscribe((dataSend) => {
+          this.dataSend = dataSend 
+          this.ngOnInit();
         })      
-   
     }
     addRecord(data : Data) {
       this.insertService.addRecord(data)
